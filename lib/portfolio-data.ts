@@ -1,22 +1,19 @@
 export const IDENTITY = {
-  name: 'ALEX_RIVERA',
-  role: 'SENIOR UX/UI ENGINEER',
-  tagline: 'Designing rigid, technical interfaces since 199X.',
+  name: 'KHOA_HO',
+  role: 'Software Engineer // Game Developer',
+  tagline: 'System-level performance, game-level engagement.',
   location: 'GRID SECTOR 7 // REMOTE',
 }
 
 export const ABOUT = {
   lines: [
-    'I build high-contrast, pixel-perfect interfaces where every',
-    'element earns its place. No soft gradients. No blob shapes.',
-    'No bento filler. Just rigid systems and honest pixels.',
-    '',
-    'Currently accepting new player-two collaborations.',
+    'System-level performance, game-level engagement.',
+    'Currently optimizing for new technical collaborations.',
   ],
   stats: [
-    { label: 'YEARS_ACTIVE', value: '08' },
-    { label: 'SHIPS_DEPLOYED', value: '42' },
-    { label: 'COFFEE_UNITS', value: '999+' },
+    { label: 'YEARS_ACTIVE', value: '03' },
+    { label: 'PROJECTS MADE', value: '12+' },
+    { label: 'GAME PLAYED', value: '100+' },
     { label: 'UPTIME', value: '99.9%' },
   ],
 }
@@ -28,15 +25,11 @@ export type Skill = {
 }
 
 export const SKILLS: Skill[] = [
-  { name: 'REACT', level: 95, category: 'FRONTEND' },
-  { name: 'TYPESCRIPT', level: 92, category: 'FRONTEND' },
-  { name: 'TAILWIND', level: 90, category: 'FRONTEND' },
-  { name: 'FIGMA', level: 88, category: 'DESIGN' },
-  { name: 'MOTION', level: 85, category: 'DESIGN' },
-  { name: 'NODE.JS', level: 80, category: 'BACKEND' },
-  { name: 'WEBGL', level: 72, category: 'GRAPHICS' },
-  { name: 'A11Y', level: 87, category: 'SYSTEMS' },
-  { name: 'PIXEL_ART', level: 78, category: 'DESIGN' },
+  { name: 'REACT', level: 50, category: 'FRONTEND' },
+  { name: 'TYPESCRIPT', level: 80, category: 'BACKEND' },
+  { name: 'NODE.JS', level: 70, category: 'BACKEND' },
+  { name: 'UNITY', level: 80, category: 'GAME DEV' },
+  { name: 'C#', level: 75, category: 'GAME DEV' },
 ]
 
 export type Project = {
@@ -52,52 +45,75 @@ export type Project = {
 export const PROJECTS: Project[] = [
   {
     id: 'PRJ-01',
-    title: 'NEON_LEDGER',
-    genre: 'FINTECH DASHBOARD',
+    title: 'BCAANS',
+    genre: 'WEB SCRAPER',
     year: '2025',
     description:
-      'A real-time trading terminal with keyboard-first navigation and zero-latency charts.',
-    stack: ['REACT', 'WEBSOCKET', 'D3'],
+      'Real-time badminton court availability tracker with automated email notifications for SportUni Hervanta facility.',
+    stack: ['REACT', 'TYPESCRIPT', 'SELENIUM', 'SUPABASE', 'VITE'],
     highScore: '1,240,500',
   },
   {
     id: 'PRJ-02',
-    title: 'PIXEL_FORGE',
-    genre: 'CREATIVE TOOL',
+    title: 'TASK MANAGEMENT APP',
+    genre: 'PRODUCTIVITY TOOL',
     year: '2024',
     description:
-      'Browser-based sprite editor with frame timelines and palette locking for game artists.',
-    stack: ['CANVAS', 'TS', 'ZUSTAND'],
-    highScore: '980,300',
+      'A task management application with a focus on performance and responsiveness, built using modern web technologies.',
+    stack: ['PRISMA', 'TYPESCRIPT', 'EXPRESS', 'REACT', 'POSTGRES'],
+    highScore: '280,300',
   },
   {
     id: 'PRJ-03',
-    title: 'GRID_RUNNER',
-    genre: 'ARCADE GAME',
-    year: '2024',
+    title: 'FRAMERY FLOW',
+    genre: 'SMART OFFICE POD SYSTEM',
+    year: '2025',
     description:
-      'An endless vector-maze runner built as a technical demo for input-latency research.',
-    stack: ['WEBGL', 'RUST/WASM'],
-    highScore: '2,004,100',
+      'Next.js application for monitoring and reserving office pods. Supabase for data (pods + bookings), auth, and realtime updates.',
+    stack: ['TYPESCRIPT', 'REACT', 'VITE', 'POSTGRES'],
+    highScore: '804,100',
   },
   {
     id: 'PRJ-04',
-    title: 'TERMINAL_CMS',
-    genre: 'DEV PLATFORM',
-    year: '2023',
+    title: 'RPS LEAGUE DASHBOARD',
+    genre: 'Reaktor Summer Developer Assignment',
+    year: '2026',
     description:
-      'A content system driven entirely by a command palette. Ship docs without a mouse.',
+      'It consumes the legacy API and presents live + historical match data in a dashboard focused on clarity and resilience.',
     stack: ['NEXT.JS', 'POSTGRES'],
     highScore: '760,900',
+  },
+
+  {
+    id: 'GAME-PRJ-01',
+    title: 'KOTO-KITCHEN',
+    genre: 'Interactive Cooking Game',
+    year: '2026',
+    description:
+      'Interactive, culinary-themed game designed specifically for touch-based tablet devices. Players complete simulated kitchen workflows that emphasize precision, timing, and clear touch feedback.',
+    stack: ['C#', 'UNITY', 'DOTNET'],
+    highScore: '760,900',
+  },
+
+  {
+    id: 'GAME-PRJ-02',
+    title: 'ROLL-A-PAWS',
+    genre: '3D CAT RUNNER GAME',
+    year: '2026',
+    description:
+      'A 3D side-scrolling runner game featuring a lovable cat character. Players navigate through various maps and avoid enemies while collecting items.',
+    stack: ['C#', 'UNITY', 'DOTNET'],
+    highScore: '2,060,900',
   },
 ]
 
 export const CONTACT = {
-  email: 'player2@arcade-os.dev',
+  email: 'khoaphan412@gmail.com',
   channels: [
-    { label: 'GITHUB', handle: '@alexrivera', url: '#' },
-    { label: 'LINKEDIN', handle: '/in/alexrivera', url: '#' },
-    { label: 'X.COM', handle: '@alex_builds', url: '#' },
+    { label: 'GITHUB', handle: '@KayHo412', url: 'https://github.com/KayHo412' },
+    { label: 'LINKEDIN', handle: '/in/khoa-phan-ho', url: 'https://www.linkedin.com/in/khoa-phan-ho/' },
+    { label: 'INSTAGRAM', handle: '@kp_phan', url: 'https://www.instagram.com/kp_phan/' },
+    { label: 'ITCH.IO', handle: 'kaho412.itch.io', url: 'https://kaho412.itch.io/' },
   ],
 }
 
@@ -107,7 +123,19 @@ export const BOOT_LOGS = [
   '> Initializing game engine .. OK',
   '> Loading assets [########] . 100%',
   '> Compiling shaders ......... OK',
-  '> Calibrating CRT scanlines . OK',
+  '> A random logs line I guess.. OK',
   '> Spawning player_one ....... OK',
+  '> Having a good dinner ....... OK',
   '> Launching graphical shell ..',
 ]
+
+type FileContent = {
+  [key: string]: string;
+};
+
+export const fileData: FileContent = {
+  'about.md': ABOUT.lines.join('\n'),
+  'skills.json': JSON.stringify(SKILLS, null, 2),
+  'project.exe': PROJECTS.map(p => `${p.id}: ${p.title} (${p.genre})`).join('\n'),
+  'contact.txt': `EMAIL: ${CONTACT.email}\nGITHUB: ${CONTACT.channels[0].handle}`
+};

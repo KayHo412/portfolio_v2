@@ -12,9 +12,10 @@ const SECTIONS = [
 ]
 
 const THEMES = [
-  { id: 'green', label: 'GREEN', swatch: '#4ade80' },
+  { id: 'white', label: 'WHITE', swatch: '#ffffff' },
   { id: 'amber', label: 'AMBER', swatch: '#e8b23a' },
   { id: 'cyan', label: 'CYAN', swatch: '#38d9e0' },
+  { id: 'green', label: 'GREEN', swatch: '#00f84a' },
 ] as const
 
 type ThemeId = (typeof THEMES)[number]['id']
@@ -27,7 +28,7 @@ export function SystemNav({ onExit }: Props) {
   const [active, setActive] = useState('about')
   const [open, setOpen] = useState(false)
   const [clock, setClock] = useState('--:--:--')
-  const [theme, setTheme] = useState<ThemeId>('green')
+  const [theme, setTheme] = useState<ThemeId>('white')
 
   useEffect(() => {
     const tick = () =>
@@ -39,7 +40,7 @@ export function SystemNav({ onExit }: Props) {
 
   useEffect(() => {
     const root = document.documentElement
-    if (theme === 'green') {
+    if (theme === 'white') {
       delete root.dataset.theme
     } else {
       root.dataset.theme = theme

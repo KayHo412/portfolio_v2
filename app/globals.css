@@ -36,11 +36,12 @@
   --muted: #141b14;
   --muted-foreground: #6f8a6f;
 
-  --neon: #4ade80;
-  --neon-dim: #2f8f52;
+  --neon: #cfc7c7;
+  --neon-dim: #ffffff;
   --cyan: #38d9e0;
-  --amber: #e8b23a;
+  --green: #00f84a;
   --danger: #ff5c5c;
+  --amber: #e8b23a;
 
   --radius: 0px;
 }
@@ -60,6 +61,14 @@
   --cyan: #4ade80;
   --foreground: #cfeef0;
   --surface-foreground: #cfeef0;
+}
+
+[data-theme='green'] {
+  --neon: #00f84a;
+  --neon-dim: #00a82e;
+  --cyan: #4ade80;
+  --foreground: #cfe8cf;
+  --surface-foreground: #cfe8cf;
 }
 
 @layer base {

@@ -2,14 +2,15 @@
 
 import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
+import { fileData } from '@/lib/portfolio-data'
 
 type Line = { text: string; tone?: 'sys' | 'user' | 'err' | 'ok' }
 
 const INTRO: Line[] = [
-  { text: 'ARCADE_OS v8.16  [build 199X]', tone: 'sys' },
-  { text: '(c) RIVERA SYSTEMS. All pixels reserved.', tone: 'sys' },
+  { text: 'KH_OS v4.12  [build 199X]', tone: 'sys' },
+  { text: '(c) K.H SYSTEMS. All pixels reserved.', tone: 'sys' },
   { text: '', tone: 'sys' },
-  { text: 'System ready. Type [npm run dev] to initialize...', tone: 'ok' },
+  { text: 'System ready. Waiting for command...', tone: 'ok' },
 ]
 
 export function TerminalGate({ onBoot }: { onBoot: () => void }) {
@@ -36,7 +37,7 @@ export function TerminalGate({ onBoot }: { onBoot: () => void }) {
 
     const next: Line[] = [...history, { text: `guest@arcade:~$ ${cmd}`, tone: 'user' }]
 
-    if (cmd.toLowerCase() === 'npm run dev') {
+    if (cmd.toLowerCase() === 'boot --system' || cmd.toLowerCase() === 'npm run dev' || cmd.toLowerCase() === 'initialize' || cmd.toLowerCase() === 'boot') {
       next.push({ text: '> booting graphical shell...', tone: 'ok' })
       setHistory(next)
       setValue('')
@@ -46,14 +47,35 @@ export function TerminalGate({ onBoot }: { onBoot: () => void }) {
     }
 
     if (cmd.toLowerCase() === 'help') {
-      next.push({ text: 'available: npm run dev, help, clear', tone: 'sys' })
+      next.push({ text: 'available: initialize, help, clear, ls, cat, whoami, cwd', tone: 'sys' })
+
     } else if (cmd.toLowerCase() === 'clear') {
       setHistory(INTRO)
       setValue('')
       return
+
+    } else if (cmd.toLowerCase() === 'whoami') {
+      next.push({ text: 'guest@arcade', tone: 'ok'})
+
+    } else if (cmd.toLowerCase() === 'cwd') {
+      next.push({ text: '/home/guest', tone: 'ok'})
+
+    } else if (cmd.toLowerCase() === 'ls') {
+      next.push({ text: 'about.md, skills.json, projects.exe, contact.txt', tone: 'ok'})
+
+    } else if (cmd.toLowerCase().startsWith('cat ')) {
+      const fileName = cmd.toLowerCase().slice(4); // Extracts the filename
+      const content = fileData[fileName];
+
+      if (content) {
+        next.push({ text: content, tone: 'ok' });
+      } else {
+        next.push({ text: `cat: ${fileName}: No such file or directory`, tone: 'err' });
+      }
+
     } else {
-      next.push({ text: `command not found: ${cmd}`, tone: 'err' })
-      next.push({ text: 'hint: type [npm run dev] to initialize.', tone: 'sys' })
+      next.push({ text: `command not found: ${cmd}`, tone: 'err' });
+      next.push({ text: 'hint: type "help" to find available commands.', tone: 'sys' });
     }
 
     setHistory(next)
@@ -141,9 +163,7 @@ export function TerminalGate({ onBoot }: { onBoot: () => void }) {
         />
 
         <footer className="border-t-2 border-border px-4 py-2 text-xs text-muted-foreground">
-          [ENTER] execute &middot; try{' '}
-          <span className="text-amber">npm run dev</span> &middot;{' '}
-          <span className="text-cyan">help</span>
+          [ENTER] execute &middot; try enter <b>help</b> for available commands
         </footer>
       </div>
     </motion.main>

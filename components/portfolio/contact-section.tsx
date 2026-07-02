@@ -60,7 +60,7 @@ export function ContactSection() {
       </div>
 
       <p className="mt-8 text-center text-[10px] tracking-widest text-muted-foreground">
-        ARCADE_OS v8.16 &middot; NO PIXELS WERE HARMED &middot; PRESS START
+        KH_OS v8.16 &middot; NO PIXELS WERE HARMED &middot; PRESS START
       </p>
     </section>
   )

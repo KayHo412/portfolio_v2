@@ -12,7 +12,7 @@ export function HeroSection() {
       aria-labelledby="about-heading"
     >
       <p className="mb-3 text-xs tracking-widest text-neon">
-        {'// PLAYER_ONE IDENTITY'}
+        {'// ADMIN IDENTITY'}
       </p>
 
       <h1

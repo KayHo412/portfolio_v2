@@ -17,7 +17,7 @@ export function SkillsSection() {
         id="skills-heading"
         className="mb-8 font-display text-4xl text-foreground sm:text-5xl"
       >
-        SKILL_TREE
+        SKILL
       </h2>
 
       <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
@@ -37,7 +37,7 @@ export function SkillsSection() {
               times: [0, 0.6, 1],
               ease: 'easeOut',
             }}
-            whileHover={{ y: -4 }}
+            //whileHover={{ y: -4 }}
             className="group border-2 border-border bg-surface p-3 hover:border-neon"
           >
             <div className="flex items-baseline justify-between">

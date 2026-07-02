@@ -8,8 +8,17 @@ export function BootSequence({ onDone }: { onDone: () => void }) {
   const [visible, setVisible] = useState(0)
   const [progress, setProgress] = useState(0)
 
+  //These force the progress bar to reach 100% and the logs to finish at the same time
+  const TOTAL_DURATION = 4000 // Total time in milliseconds
+  const PROGRESS_INCREMENT = 1 // How much % to add per step
+
   useEffect(() => {
-    const interval = 1800 / BOOT_LOGS.length
+    // Sync logs: Distribute log appearances over 90% of the duration
+    const logInterval = (TOTAL_DURATION * 0.9) / BOOT_LOGS.length
+
+    // Sync progress: Calculate interval based on progress increments
+    const progressInterval = TOTAL_DURATION / (100 / PROGRESS_INCREMENT)
+
     const logTimer = window.setInterval(() => {
       setVisible((v) => {
         if (v >= BOOT_LOGS.length) {
@@ -18,13 +27,19 @@ export function BootSequence({ onDone }: { onDone: () => void }) {
         }
         return v + 1
       })
-    }, interval)
+    }, logInterval)
 
     const progressTimer = window.setInterval(() => {
-      setProgress((p) => Math.min(100, p + 4))
-    }, 1800 / 25)
+      setProgress((p) => {
+        if (p >= 100) {
+          window.clearInterval(progressTimer)
+          return 100
+        }
+        return Math.min(100, p + PROGRESS_INCREMENT)
+      })
+    }, progressInterval)
 
-    const done = window.setTimeout(onDone, 2100)
+    const done = window.setTimeout(onDone, TOTAL_DURATION)
 
     return () => {
       window.clearInterval(logTimer)
@@ -63,10 +78,8 @@ export function BootSequence({ onDone }: { onDone: () => void }) {
               {log.includes('OK') && <span className="text-neon"> [done]</span>}
             </motion.p>
           ))}
-          <span className="cursor-blink text-neon" aria-hidden="true" />
         </div>
 
-        {/* Pixel progress bar */}
         <div className="mt-6">
           <div className="mb-1 flex justify-between text-xs text-muted-foreground">
             <span>LOADING GRAPHICAL SHELL</span>
@@ -74,7 +87,7 @@ export function BootSequence({ onDone }: { onDone: () => void }) {
           </div>
           <div className="h-4 w-full border-2 border-neon bg-muted p-0.5">
             <div
-              className="h-full bg-neon transition-[width] duration-75"
+              className="h-full bg-neon transition-[width] duration-[50ms] ease-linear"
               style={{ width: `${progress}%` }}
             />
           </div>

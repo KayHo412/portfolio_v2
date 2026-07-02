@@ -80,7 +80,7 @@ export function ProjectsSection() {
       aria-labelledby="projects-heading"
     >
       <p className="mb-3 text-xs tracking-widest text-neon">
-        {'// GAME LIBRARY'}
+        {'// PROJECT LIBRARY'}
       </p>
       <h2
         id="projects-heading"
