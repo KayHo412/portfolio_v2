@@ -1,33 +1,27 @@
-# portfolio-v2
+# ARCADE_OS // Portfolio
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+A high-performance, modular portfolio interface architected for efficiency. Built to demonstrate proficiency in system design, low-latency UI, and React architecture.
 
-## Built with v0
+## TECH STACK
+* **Framework:** Next.js (App Router)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS
+* **Animation:** Framer Motion
+* **Deployment:** Vercel
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
+## ARCHITECTURAL FEATURES
+* **Boot Sequence:** Custom implementation of a hardware-style initialization shell.
+* **Dynamic File System:** Simulated CLI environment with `cat`, `ls`, and navigation commands.
+* **System Metrics:** Real-time state management for skill-level visualization.
+* **Component-Based Design:** Modular UI components built for maintainability and scalability.
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_b4yQEi9DPMYfbeVEWP9w7tYAm5dG)
-
-## Getting Started
-
-First, run the development server:
-
+## LOCAL INSTALLATION
 ```bash
+# Clone the repository
+git clone <your-repo-url>
+
+# Install dependencies
+npm install
+
+# Initialize development environment
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.

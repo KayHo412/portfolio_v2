@@ -7,8 +7,8 @@ import { fileData } from '@/lib/portfolio-data'
 type Line = { text: string; tone?: 'sys' | 'user' | 'err' | 'ok' }
 
 const INTRO: Line[] = [
-  { text: 'KH_OS v4.12  [build 199X]', tone: 'sys' },
-  { text: '(c) K.H SYSTEMS. All pixels reserved.', tone: 'sys' },
+  { text: 'ARCADE_OS v4.12  [build 2005]', tone: 'sys' },
+  { text: '(c) KH_SYSTEMS. All pixels reserved.', tone: 'sys' },
   { text: '', tone: 'sys' },
   { text: 'System ready. Waiting for command...', tone: 'ok' },
 ]

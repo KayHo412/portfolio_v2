@@ -59,14 +59,13 @@ function ArcadeCabinet({ project, index }: { project: Project; index: number }) 
 
       {/* Cabinet base / high score */}
       <div className="flex items-center justify-between border-t-2 border-border px-3 py-2">
-        <span className="text-[10px] tracking-widest text-muted-foreground">
+       {/* <span className="text-[10px] tracking-widest text-muted-foreground">
           HI-SCORE{' '}
           <span className="text-amber text-glow">{project.highScore}</span>
         </span>
         <span className="flex items-center gap-1 text-[10px] tracking-widest text-neon">
           <Play size={12} aria-hidden="true" />
-          INSERT COIN
-        </span>
+        </span> */}
       </div>
     </motion.article>
   )
