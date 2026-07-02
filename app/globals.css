@@ -45,6 +45,23 @@
   --radius: 0px;
 }
 
+/* Alternate accent themes: swap the primary neon token */
+[data-theme='amber'] {
+  --neon: #e8b23a;
+  --neon-dim: #a9781f;
+  --cyan: #4ade80;
+  --foreground: #f0e0c0;
+  --surface-foreground: #f0e0c0;
+}
+
+[data-theme='cyan'] {
+  --neon: #38d9e0;
+  --neon-dim: #1f8f95;
+  --cyan: #4ade80;
+  --foreground: #cfeef0;
+  --surface-foreground: #cfeef0;
+}
+
 @layer base {
   * {
     border-color: var(--border);

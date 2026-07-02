@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Menu, X, Terminal } from 'lucide-react'
+import { Menu, X, Terminal, Power } from 'lucide-react'
 import { IDENTITY } from '@/lib/portfolio-data'
 
 const SECTIONS = [
@@ -11,20 +11,40 @@ const SECTIONS = [
   { id: 'contact', label: 'CONTACT', key: '04' },
 ]
 
-export function SystemNav() {
+const THEMES = [
+  { id: 'green', label: 'GREEN', swatch: '#4ade80' },
+  { id: 'amber', label: 'AMBER', swatch: '#e8b23a' },
+  { id: 'cyan', label: 'CYAN', swatch: '#38d9e0' },
+] as const
+
+type ThemeId = (typeof THEMES)[number]['id']
+
+type Props = {
+  onExit: () => void
+}
+
+export function SystemNav({ onExit }: Props) {
   const [active, setActive] = useState('about')
   const [open, setOpen] = useState(false)
   const [clock, setClock] = useState('--:--:--')
+  const [theme, setTheme] = useState<ThemeId>('green')
 
   useEffect(() => {
     const tick = () =>
-      setClock(
-        new Date().toLocaleTimeString('en-GB', { hour12: false }),
-      )
+      setClock(new Date().toLocaleTimeString('en-GB', { hour12: false }))
     tick()
     const t = window.setInterval(tick, 1000)
     return () => window.clearInterval(t)
   }, [])
+
+  useEffect(() => {
+    const root = document.documentElement
+    if (theme === 'green') {
+      delete root.dataset.theme
+    } else {
+      root.dataset.theme = theme
+    }
+  }, [theme])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -76,6 +96,50 @@ export function SystemNav() {
     </ul>
   )
 
+  const themePicker = (
+    <div>
+      <p className="mb-2 text-[10px] tracking-widest text-muted-foreground">
+        THEME
+      </p>
+      <div className="flex gap-2">
+        {THEMES.map((t) => {
+          const on = theme === t.id
+          return (
+            <button
+              key={t.id}
+              onClick={() => setTheme(t.id)}
+              aria-pressed={on}
+              aria-label={`${t.label} theme`}
+              title={t.label}
+              className={`flex flex-1 items-center justify-center gap-1 border-2 py-1.5 text-[9px] tracking-widest transition-colors ${
+                on
+                  ? 'border-neon text-foreground'
+                  : 'border-border text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              <span
+                className="inline-block h-3 w-3 border border-background"
+                style={{ backgroundColor: t.swatch }}
+                aria-hidden="true"
+              />
+              {t.label}
+            </button>
+          )
+        })}
+      </div>
+    </div>
+  )
+
+  const rebootButton = (
+    <button
+      onClick={onExit}
+      className="flex w-full items-center justify-center gap-2 border-2 border-danger px-3 py-2 text-xs tracking-widest text-danger transition-colors hover:bg-danger hover:text-background"
+    >
+      <Power size={14} aria-hidden="true" />
+      REBOOT TO TERMINAL
+    </button>
+  )
+
   return (
     <>
       {/* Desktop sidebar */}
@@ -95,6 +159,10 @@ export function SystemNav() {
         </div>
 
         <nav aria-label="System menu">{navItems}</nav>
+
+        <div className="mt-6">{themePicker}</div>
+
+        <div className="mt-4">{rebootButton}</div>
 
         <div className="mt-auto border-t-2 border-border pt-3 text-[10px] text-muted-foreground">
           <p className="flex justify-between">
@@ -128,13 +196,20 @@ export function SystemNav() {
       </div>
 
       {open && (
-        <div className="fixed inset-0 z-30 bg-background/80 lg:hidden" onClick={() => setOpen(false)}>
+        <div
+          className="fixed inset-0 z-30 bg-background/80 lg:hidden"
+          onClick={() => setOpen(false)}
+        >
           <div
             className="absolute left-2 right-2 top-12 border-2 border-neon bg-surface p-3 box-glow"
             onClick={(e) => e.stopPropagation()}
           >
-            <p className="mb-2 font-display text-xl text-neon">{IDENTITY.name}</p>
+            <p className="mb-2 font-display text-xl text-neon">
+              {IDENTITY.name}
+            </p>
             {navItems}
+            <div className="mt-4">{themePicker}</div>
+            <div className="mt-4">{rebootButton}</div>
           </div>
         </div>
       )}

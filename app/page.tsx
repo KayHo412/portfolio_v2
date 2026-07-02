@@ -21,7 +21,9 @@ export default function Page() {
         {stage === 'boot' && (
           <BootSequence key="boot" onDone={() => setStage('portfolio')} />
         )}
-        {stage === 'portfolio' && <PortfolioShell key="portfolio" />}
+        {stage === 'portfolio' && (
+          <PortfolioShell key="portfolio" onExit={() => setStage('terminal')} />
+        )}
       </AnimatePresence>
 
       <CrtOverlay />
