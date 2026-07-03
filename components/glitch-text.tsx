@@ -8,10 +8,6 @@ type GlitchTextProps = {
   className?: string
 }
 
-/**
- * Interactive pixel-glitch effect. Triggers on hover and when scrolled into view.
- * Renders two offset chromatic clones (cyan / amber) that jitter.
- */
 export function GlitchText({ text, className = '' }: GlitchTextProps) {
   const [active, setActive] = useState(false)
 

@@ -6,6 +6,7 @@ import { HeroSection } from './hero-section'
 import { SkillsSection } from './skills-section'
 import { ProjectsSection } from './projects-section'
 import { ContactSection } from './contact-section'
+import { PortfolioGame } from './portfolio-game'
 
 type Props = {
   onExit: () => void
@@ -29,6 +30,7 @@ export function PortfolioShell({ onExit }: Props) {
           <SkillsSection />
           <ProjectsSection />
           <ContactSection />
+          <PortfolioGame />
         </div>
       </motion.main>
     </div>

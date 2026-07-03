@@ -9,6 +9,7 @@ const SECTIONS = [
   { id: 'skills', label: 'SKILLS', key: '02' },
   { id: 'projects', label: 'PROJECTS', key: '03' },
   { id: 'contact', label: 'CONTACT', key: '04' },
+  { id: 'games', label: 'PLAY', key: '05' },
 ]
 
 const THEMES = [

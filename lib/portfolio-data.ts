@@ -112,7 +112,6 @@ export const CONTACT = {
   channels: [
     { label: 'GITHUB', handle: '@KayHo412', url: 'https://github.com/KayHo412' },
     { label: 'LINKEDIN', handle: '/in/khoa-phan-ho', url: 'https://www.linkedin.com/in/khoa-phan-ho/' },
-    { label: 'INSTAGRAM', handle: '@kp_phan', url: 'https://www.instagram.com/kp_phan/' },
     { label: 'ITCH.IO', handle: 'kaho412.itch.io', url: 'https://kaho412.itch.io/' },
   ],
 }
