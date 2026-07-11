@@ -10,7 +10,7 @@ const INTRO: Line[] = [
   { text: 'ARCADE_OS v4.12  [build 2005]', tone: 'sys' },
   { text: '(c) KH_SYSTEMS. All pixels reserved.', tone: 'sys' },
   { text: '', tone: 'sys' },
-  { text: 'System ready. Waiting for command...', tone: 'ok' },
+  { text: 'System ready. Type [init] to start...', tone: 'ok' },
 ]
 
 export function TerminalGate({ onBoot }: { onBoot: () => void }) {
@@ -37,7 +37,7 @@ export function TerminalGate({ onBoot }: { onBoot: () => void }) {
 
     const next: Line[] = [...history, { text: `guest@arcade:~$ ${cmd}`, tone: 'user' }]
 
-    if (cmd.toLowerCase() === 'boot --system' || cmd.toLowerCase() === 'npm run dev' || cmd.toLowerCase() === 'initialize' || cmd.toLowerCase() === 'boot') {
+    if (cmd.toLowerCase() === 'boot --system' || cmd.toLowerCase() === 'npm run dev' || cmd.toLowerCase() === 'initialize' || cmd.toLowerCase() === 'boot' || cmd.toLowerCase() === 'init') {
       next.push({ text: '> booting graphical shell...', tone: 'ok' })
       setHistory(next)
       setValue('')
