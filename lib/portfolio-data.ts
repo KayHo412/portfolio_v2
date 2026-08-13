@@ -13,7 +13,7 @@ export const ABOUT = {
   stats: [
     { label: 'YEARS_ACTIVE', value: '03' },
     { label: 'PROJECTS MADE', value: '12+' },
-    { label: 'GAME PLAYED', value: '100+' },
+    { label: 'GAME PLAYED', value: '50+' },
     { label: 'UPTIME', value: '99.9%' },
   ],
 }
@@ -40,21 +40,16 @@ export type Project = {
   description: string
   stack: string[]
   highScore: string
+  image?: string
+  links?: {
+    label: string
+    url: string
+  }[]
 }
 
 export const PROJECTS: Project[] = [
   {
     id: 'PRJ-01',
-    title: 'BCAANS',
-    genre: 'WEB SCRAPER',
-    year: '2025',
-    description:
-      'Real-time badminton court availability tracker with automated email notifications for SportUni Hervanta facility.',
-    stack: ['REACT', 'TYPESCRIPT', 'SELENIUM', 'SUPABASE', 'VITE'],
-    highScore: '1,240,500',
-  },
-  {
-    id: 'PRJ-02',
     title: 'TASK MANAGEMENT APP',
     genre: 'PRODUCTIVITY TOOL',
     year: '2024',
@@ -62,9 +57,13 @@ export const PROJECTS: Project[] = [
       'A task management application with a focus on performance and responsiveness, built using modern web technologies.',
     stack: ['PRISMA', 'TYPESCRIPT', 'EXPRESS', 'REACT', 'POSTGRES'],
     highScore: '280,300',
+    image: 'public\Task-Management-App.png',
+    links: [
+      { label: 'GITHUB', url: 'https://github.com/KayHo412/task-management-app' },
+    ],
   },
   {
-    id: 'PRJ-03',
+    id: 'PRJ-02',
     title: 'FRAMERY FLOW',
     genre: 'SMART OFFICE POD SYSTEM',
     year: '2025',
@@ -72,9 +71,13 @@ export const PROJECTS: Project[] = [
       'Next.js application for monitoring and reserving office pods. Supabase for data (pods + bookings), auth, and realtime updates.',
     stack: ['TYPESCRIPT', 'REACT', 'VITE', 'POSTGRES'],
     highScore: '804,100',
+    image: 'public\framery-flow.png',
+    links: [
+      { label: 'GITHUB', url: 'https://github.com/KayHo412/framery-flow' },
+    ],
   },
   {
-    id: 'PRJ-04',
+    id: 'PRJ-03',
     title: 'RPS LEAGUE DASHBOARD',
     genre: 'Reaktor Summer Developer Assignment',
     year: '2026',
@@ -82,6 +85,32 @@ export const PROJECTS: Project[] = [
       'It consumes the legacy API and presents live + historical match data in a dashboard focused on clarity and resilience.',
     stack: ['NEXT.JS', 'POSTGRES'],
     highScore: '760,900',
+    image: 'public\Reaktor.png',
+    links: [
+      { label: 'GITHUB', url: 'https://github.com/KayHo412/reaktor' },
+    ],
+  },
+  {
+    id: 'PRJ-04',
+    title: 'BCAANS',
+    genre: 'WEB SCRAPER',
+    year: '2025',
+    description:
+      'Real-time badminton court availability tracker with automated email notifications for SportUni Hervanta facility.',
+    stack: ['REACT', 'TYPESCRIPT', 'SELENIUM', 'SUPABASE', 'VITE'],
+    highScore: '1,240,500',
+    image: '/placeholder.jpg',
+  },
+  {
+    id: 'PRJ-05',
+    title: 'Game Service Backend',
+    genre: 'Backend',
+    year: '2026',
+    description:
+      'A game service backend that handles user authentication, game state management, and real-time multiplayer interactions for a 1v1 game.',
+    stack: ['REACT', 'TYPESCRIPT', 'DRIZZLE', 'POSTGRES', 'GITHUB ACTIONS'],
+    highScore: '1,240,500',
+    image: '/placeholder.jpg',
   },
 
   {
@@ -93,6 +122,7 @@ export const PROJECTS: Project[] = [
       'Interactive, culinary-themed game designed specifically for touch-based tablet devices. Players complete simulated kitchen workflows that emphasize precision, timing, and clear touch feedback.',
     stack: ['C#', 'UNITY', 'DOTNET'],
     highScore: '760,900',
+    image: '/placeholder.jpg',
   },
 
   {
@@ -104,6 +134,7 @@ export const PROJECTS: Project[] = [
       'A 3D side-scrolling runner game featuring a lovable cat character. Players navigate through various maps and avoid enemies while collecting items.',
     stack: ['C#', 'UNITY', 'DOTNET'],
     highScore: '2,060,900',
+    image: '/placeholder.jpg',
   },
 ]
 

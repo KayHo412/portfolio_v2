@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Play } from 'lucide-react'
@@ -44,6 +45,16 @@ function ArcadeCabinet({ project, index }: { project: Project; index: number }) 
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
           {project.description}
         </p>
+
+        <div className="relative mt-4 aspect-[16/9] overflow-hidden border-2 border-border bg-muted">
+          <Image
+            src={project.image ?? '/placeholder.jpg'}
+            alt={`${project.title} preview`}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+          />
+        </div>
 
         <div className="mt-4 flex flex-wrap gap-1.5">
           {project.stack.map((tech) => (
