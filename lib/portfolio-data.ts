@@ -57,7 +57,7 @@ export const PROJECTS: Project[] = [
       'A task management application with a focus on performance and responsiveness, built using modern web technologies.',
     stack: ['PRISMA', 'TYPESCRIPT', 'EXPRESS', 'REACT', 'POSTGRES'],
     highScore: '280,300',
-    image: 'public\Task-Management-App.png',
+    image: '',
     links: [
       { label: 'GITHUB', url: 'https://github.com/KayHo412/task-management-app' },
     ],
@@ -71,7 +71,7 @@ export const PROJECTS: Project[] = [
       'Next.js application for monitoring and reserving office pods. Supabase for data (pods + bookings), auth, and realtime updates.',
     stack: ['TYPESCRIPT', 'REACT', 'VITE', 'POSTGRES'],
     highScore: '804,100',
-    image: 'public\framery-flow.png',
+    image: '',
     links: [
       { label: 'GITHUB', url: 'https://github.com/KayHo412/framery-flow' },
     ],
@@ -85,7 +85,6 @@ export const PROJECTS: Project[] = [
       'It consumes the legacy API and presents live + historical match data in a dashboard focused on clarity and resilience.',
     stack: ['NEXT.JS', 'POSTGRES'],
     highScore: '760,900',
-    image: 'public\Reaktor.png',
     links: [
       { label: 'GITHUB', url: 'https://github.com/KayHo412/reaktor' },
     ],
@@ -99,7 +98,10 @@ export const PROJECTS: Project[] = [
       'Real-time badminton court availability tracker with automated email notifications for SportUni Hervanta facility.',
     stack: ['REACT', 'TYPESCRIPT', 'SELENIUM', 'SUPABASE', 'VITE'],
     highScore: '1,240,500',
-    image: '/placeholder.jpg',
+    image: '',
+    links: [
+      { label: 'GITHUB', url: 'https://github.com/KayHo412/BCAANSS'},
+    ],
   },
   {
     id: 'PRJ-05',
@@ -110,7 +112,8 @@ export const PROJECTS: Project[] = [
       'A game service backend that handles user authentication, game state management, and real-time multiplayer interactions for a 1v1 game.',
     stack: ['REACT', 'TYPESCRIPT', 'DRIZZLE', 'POSTGRES', 'GITHUB ACTIONS'],
     highScore: '1,240,500',
-    image: '/placeholder.jpg',
+    image: '',
+    links : [ { label: 'GITHUB', url: 'https://github.com/KayHo412/game-services'}]
   },
 
   {
@@ -122,7 +125,8 @@ export const PROJECTS: Project[] = [
       'Interactive, culinary-themed game designed specifically for touch-based tablet devices. Players complete simulated kitchen workflows that emphasize precision, timing, and clear touch feedback.',
     stack: ['C#', 'UNITY', 'DOTNET'],
     highScore: '760,900',
-    image: '/placeholder.jpg',
+    image: '',
+    links : [ { label: 'ITCH.IO', url: 'https://kaho412.itch.io/koto-kitchen'}]
   },
 
   {
@@ -134,7 +138,8 @@ export const PROJECTS: Project[] = [
       'A 3D side-scrolling runner game featuring a lovable cat character. Players navigate through various maps and avoid enemies while collecting items.',
     stack: ['C#', 'UNITY', 'DOTNET'],
     highScore: '2,060,900',
-    image: '/placeholder.jpg',
+    image: '',
+    links : [ { label: 'itch.io', url: 'https://kaho412.itch.io/not-yet-named'}]
   },
 ]
 
