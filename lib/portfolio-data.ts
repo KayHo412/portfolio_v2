@@ -139,7 +139,7 @@ export const PROJECTS: Project[] = [
     stack: ['C#', 'UNITY', 'DOTNET'],
     highScore: '2,060,900',
     image: '',
-    links : [ { label: 'itch.io', url: 'https://kaho412.itch.io/not-yet-named'}]
+    links : [ { label: 'ITCH.IO', url: 'https://kaho412.itch.io/not-yet-named'}]
   },
 ]
 

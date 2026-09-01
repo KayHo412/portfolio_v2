@@ -46,7 +46,23 @@ function ArcadeCabinet({ project, index }: { project: Project; index: number }) 
           {project.description}
         </p>
 
-        <div className="relative mt-4 aspect-[16/9] overflow-hidden border-2 border-border bg-muted">
+        {project.links && (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {project.links.map((link) => (
+              <a
+                key={link.label}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10px] tracking-widest text-cyan hover:text-neon"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        )}
+
+        {/* <div className="relative mt-4 aspect-[16/9] overflow-hidden border-2 border-border bg-muted">
           <Image
             src={project.image ?? '/placeholder.jpg'}
             alt={`${project.title} preview`}
@@ -54,7 +70,7 @@ function ArcadeCabinet({ project, index }: { project: Project; index: number }) 
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
           />
-        </div>
+        </div> */}
 
         <div className="mt-4 flex flex-wrap gap-1.5">
           {project.stack.map((tech) => (
